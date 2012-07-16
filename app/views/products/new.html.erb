@@ -1,0 +1,34 @@
+<h1>Add a New Product</h1>
+<%= form_for @product do |f| %>
+  <% if @product.errors.any? %>
+    <h2> Errors: </h2>
+      <ul>
+      <%@product.errors.full_messages.each do |message| %>
+      <li><%= message %></li>	
+	  <% end %>
+
+    </ul>
+  
+  <% end %>
+<p>
+	<%= f.label :title%><br />
+	<%= f.text_field :title %>
+</p>
+<p>
+	<%= f.label :description%><br />
+	<%= f.text_area :description %>
+</p>
+<p>
+	<%= f.label :price%><br />
+	<%= f.text_field :price %>
+</p>
+<p>
+	<%= f.label :stock%><br />
+	<%= f.text_field :stock %>
+</p>
+<p>
+	<%= f.submit "Add a New Product"%><br />
+</p>
+
+<%end%>
+

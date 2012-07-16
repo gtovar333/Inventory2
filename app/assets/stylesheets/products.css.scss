@@ -1,0 +1,53 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/******* MENU *******/  
+ul.dropdown{  
+    width: 200px;  
+    border: 1px solid #000;  
+    border-radius: 5px;  
+    -moz-border-radius: 5px;  
+    -webkit-border-radius: 5px;  
+//    background: #1a1a1a;  
+
+    margin-top: 2em;  
+}  
+ul.dropdown li{  
+    display: none;  
+    font-size: 12px;  
+}  
+ul.dropdown li.active{  
+    display: block;  
+    color: #8c8c8c;  
+    font-size: 14px;  
+    padding: 12px;  
+    color: #555;  
+   /* border-top: 1px solid #313131;  
+    border-radius: 4px;  
+    -moz-border-radius: 4px;  
+    -webkit-border-radius: 4px;  */
+}  
+ul.dropdown li.active span{  
+    background: transparent url("dropdown.png") no-repeat scroll rightright center;  
+    padding-right: 24px;  
+    color: #8c8c8c;  
+}  
+ul.dropdown li a{  
+    display: block;  
+    text-decoration: none;  
+    padding: 8px 8px 8px 10px;  
+    //background: #1e1e1e;  
+    border-bottom: 1px solid #171717;  
+}  
+ul.dropdown li.last a{  
+    border:0;  
+}  
+ul.dropdown li.first a{  
+    border-top: 3px solid #131313;  
+}  
+ul.dropdown li a:hover{  
+    background: #232323;  
+    color: #fff;  
+    padding-left: 11px;  
+}  
+/******* /MENU *******/  

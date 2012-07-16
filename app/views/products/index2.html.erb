@@ -1,0 +1,59 @@
+
+<div id="zzz">
+<p><%= link_to "Log out", destroy_user_session_path, :method => :delete %></p>
+<h1>Inventory</h1>
+<a href="#" id="" >Menu </a>
+<ul class="dropdown">  
+    <li class="active">Menu: <span>W/E</span></li>  
+    <li class="first"><a href="#">Recursos</a></li>  
+    <li><a href="#">Inspiración</a></li>  
+    <li><a href="#">Contacto</a></li>  
+    <li class="last"><a href="#">Ver más...</a></li>  
+</ul>
+<script type="text/javascript">
+
+var menu = $("ul.dropdown");  
+//control de eventos  
+$(document).ready(function(){  
+    menu.mouseover(function(){  
+        displayOptions($(this).find("li"));  
+    });  
+    menu.mouseout(function(){  
+        hideOptions($(this));  
+    });
+    $('#products').click(function(){
+	    alert('dsnfjsn')
+	    $("<div id='info' />").load('index2.html.erb #information',function(){
+	    	$(this).hide
+	    			.appendTo('zzz')
+	    			.slideDown(1000)
+	    });
+	    
+    });
+});
+  
+//funcion que MUESTRA todos los elementos del menu  
+function displayOptions(e){  
+    e.show();  
+}  
+//funcion que OCULTA los elementos del menu  
+function hideOptions(e){  
+    e.find("li").hide();  
+    e.find("li.active").show();  
+}
+
+
+
+</script>
+<div id="information">
+<% @products.each do |product| %>
+	<h2><%= link_to product.title, product %></h2>
+	<p><%= product.description %></p>
+	<p><%= link_to "Edit", edit_product_path(product) %> | <%= link_to "Delete", product, :confirm => "Are you sure?", :method => :delete%></p>
+	<hr	 />
+<% end %>
+<p><%= link_to "Add a Product",new_product_path %></p>
+</div>
+<a href="#" id="products" >Show Products</a>
+
+</div>
